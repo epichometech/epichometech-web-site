@@ -35,8 +35,8 @@ SOCIAL = (
 
 CONTACTS = [
     ("Discord", "brands fa-discord", "https://discord.gg/dpC7FnEsar"),
-    ("Email Us", "solid fa-envelope", "mailto:jeremy@epichome.tech?subject=Mail from Our Site"),
     ("Github", "brands fa-github", "https://github.com/epichometech"),
+    ("Email Us", "solid fa-envelope", "mailto:jeremy@epichome.tech?subject=Mail from Our Site"),
 ]
 
 DEFAULT_PAGINATION = 10
