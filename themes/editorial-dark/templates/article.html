@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+                                <section>
+                                    <article>
+                                        <header class="main">
+                                            {% if article.image is defined %}
+                                            <a href="{{ SITEURL }}/images/{{ article.image }}" class="image article block"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
+                                            {% endif %}
+                                            <div class="title">
+                                                <h1><a href="/{{ article.url }}">{{ article.title }}</a></h1>
+                                            </div>
+                                            <div class="meta">
+                                                <time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
+                                                <a href="/{{ article.author.url }}" class="author"><span class="name">{{ article.author }}</span><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt="" /></a>
+                                            </div>
+                                        </header>
+                                        {{ article.content }}
+                                        <!--
+                                        <footer>
+                                            <ul class="stats">
+                                                {% for tag in article.tags %}
+                                                <li><a href="#">{{ tag.name }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </footer>
+                                        -->
+                                    </article>
+                                </section>
+{% endblock %}

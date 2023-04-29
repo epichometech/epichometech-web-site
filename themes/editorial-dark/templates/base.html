@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ SITENAME }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+                <!-- Main -->
+                <div id="main">
+                    <div class="inner">
+
+                        <!-- Header -->
+                            <header id="header">
+                                <h2>{{ SITENAME }}</h2>
+                                <ul class="icons">
+                                    {% for name, icon, link in CONTACTS %}
+                                    <li><a href="{{ link }}" class="icon {{ icon }}"></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </header>
+                    </div>
+                    <div class="inner">
+{% block content %}{% endblock %}
+                    </div>
+                </div>
+
+				<!-- Sidebar -->
+                <div id="sidebar">
+                    <div class="inner">
+
+                        <!-- Search
+                            <section id="search" class="alt">
+                                
+                                <form method="post" action="#">
+                                    <input type="text" name="query" id="query" placeholder="Search" />
+                                </form>
+                                
+                            </section>
+                        -->
+                        <!-- Menu -->
+                            <nav id="menu">
+                                <header class="major">
+                                    <h2>Menu</h2>
+                                </header>
+                                <ul>
+                                    <li><a href="{{ SITEURL }}/index.html">Homepage</a></li>
+                                    <li>
+                                        <span class="opener">Categories</span>
+                                        <ul>
+                                            <li><a href="{{ SITEURL }}/categories.html">All Categories</a></li>
+                                            {% for category, articles in categories|sort %}
+                                            <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ SITEURL }}/authors.html">Authors</a></li>
+                                </ul>
+                            </nav>
+
+                        <!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Latest Articles</h2>
+                                </header>
+                                <div class="mini-posts">
+                                    {% for article in articles[:4] %}
+                                    <article>
+                                        <header>
+                                            <time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
+                                            <a href="/{{ article.author.url }}" class="author"><span class="name">{{ article.author }}</span></a>
+                                            <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                                            <p>{{ article.subtitle }}</p>
+                                        </header>
+                                        <!--
+                                        {% if article.image is defined %}
+                                        <a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
+                                        {% endif %}
+                                        -->
+                                    </article>
+                                    <ul class="actions">
+                                        <li><a href="{{ article.url }}" class="button">More</a></li>
+                                    </ul>
+                                    {% endfor %}
+                                </div>
+                            </section>
+
+                        <!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Get in touch</h2>
+                                </header>
+                                <p>We are always excited to hear from our visitors and members alike. Join our Discord community or send us an email.</p>
+                                <ul class="contact">
+                                    {% for name, icon, link in CONTACTS %}
+                                    <li class="icon {{ icon }}"><a href="{{ link }}">{{ name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </section>
+
+                        <!-- Footer -->
+                            <footer id="footer">
+                            </footer>
+
+                    </div>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="{{ SITEURL }}/theme/js/jquery.min.js"></script>
+        <script src="{{ SITEURL }}/theme/js/browser.min.js"></script>
+        <script src="{{ SITEURL }}/theme/js/breakpoints.min.js"></script>
+        <script src="{{ SITEURL }}/theme/js/util.js"></script>
+        <script src="{{ SITEURL }}/theme/js/main.js"></script>
+
+</body>
+</html>

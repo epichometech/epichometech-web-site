@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+                                <section>
+                                    <author>
+                                        <header class="main" style="overflow: hidden;">
+											<span class="image right">
+                                                {% if author.avatar is defined %}
+                                                <img src="{{ SITEURL }}/images/{{ author.avatar }}">
+                                                {% endif %}
+                                            </span>
+											<div class="title">
+                                                <h1>{{ author }}</h1>
+                                            </div>
+											<h2>Experience: </h2>{% for item in author.experience %}<p>{{ item }}</p>{% endfor %}
+											<h2>Current Interests: </h2>{% for item in author.interests %}<p>{{ item }}</p>{% endfor %}
+                                        </header>
+                                    </author>
+                                </section>
+								{% if author.content is defined %}
+								<h1>Biography</h1>
+								{{ author.content }}
+								{% endif %}
+								<section>
+									<header class="major">
+										<h2>Recent Articles</h2>
+									</header>
+									<div class="posts">
+										{% for article in articles_page.object_list %}
+										<!-- Post -->
+										<article>
+											<header>
+												{% if article.image is defined %}
+												<a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
+												{% endif %}
+												<div class="title">
+													<h3><a href="/{{ article.url }}">{{ article.title }}</a></h3>
+												</div>
+												<!--
+												<div class="meta">
+													<time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
+													<a href="#" class="author"><span class="name">{{ article.author }}</span><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt="" /></a>
+												</div>
+												-->
+												<p>{{ article.summary }}</p>
+											</header>
+											<footer>
+												<ul class="actions">
+													<li><a href="/{{ article.url }}" class="button">Continue Reading</a></li>
+												</ul>
+												<!--
+												<ul class="stats">
+													{% for tag in article.tags %}
+													<li><a href="#">{{ tag.name }}</a></li>
+													{% endfor %}
+												</ul>
+												-->
+											</footer>
+										</article>
+										{% endfor %}
+									</div>
+								</section>
+{% endblock %}
