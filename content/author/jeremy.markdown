@@ -1,5 +1,5 @@
 Name: Jeremy
-Avatar: richard-gere.png
+Avatar: jeremy.png
 Experience: 12 years in Network Engineering
             Lifetime uer of Linux
 Interests:  Home automation and IoT

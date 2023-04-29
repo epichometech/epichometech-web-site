@@ -7,6 +7,8 @@ ARTICLE_PATHS = ['articles']
 ARTICLE_URL = 'articles/{slug}.html'
 ARTICLE_SAVE_AS = 'articles/{slug}.html'
 
+DELETE_OUTPUT_DIRECTORY = True
+
 PATH = 'content'
 THEME = "themes/editorial-dark"
 
