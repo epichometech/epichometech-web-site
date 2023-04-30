@@ -28,7 +28,7 @@
                                 <h2><a href="{{ SITEURL }}">{{ SITENAME }}</a></h2>
                                 <ul class="icons">
                                     {% for name, icon, link in CONTACTS %}
-                                    <li><a href="{{ link }}" class="icon {{ icon }}"></a></li>
+                                    <li><a href="{{ link }}" target="_blank" class="icon {{ icon }}"></a></li>
                                     {% endfor %}
                                 </ul>
                             </header>
@@ -106,7 +106,7 @@
                                 <p>We are always excited to hear from our visitors and members alike. Join our Discord community or send us an email.</p>
                                 <ul class="contact">
                                     {% for name, icon, link in CONTACTS %}
-                                    <li class="icon {{ icon }}"><a href="{{ link }}">{{ name }}</a></li>
+                                    <li class="icon {{ icon }}"><a href="{{ link }}" target="_blank">{{ name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </section>
