@@ -1,4 +1,4 @@
-AUTHOR = 'Carl'
+AUTHOR = 'Jeremy'
 AUTHOR_EMAIL = 'jeremy@epichome.tech'
 SITENAME = 'Epic Home Tech'
 SITESUBTITLE = 'Where Great Tech Makes An Epic Home'
