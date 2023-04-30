@@ -1,105 +1,114 @@
 {% extends "base.html" %}
+{% set ns = namespace(article_first = None) %}
+{% for category, articles in categories|sort if category == "About" %}
+{% set ns.article_first = articles[0] %}
+{% endfor %}
+{% block meta %}
+<meta property="og:sitename" content="{{ SITENAME }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}" />
+<meta property="og:title" content="{{ ns.article_first.title }}" />
+<meta property="og:description" content="{{ ns.article_first.summary }}" />
+<meta property="og:image" content="{{ SITEURL }}/logo-256x256.svg" />
+{% endblock %}
 {% block content %}
-							<!-- Banner -->
-								<section>
-									<article>
-										<header class="main">
-											{% for category, articles in categories|sort if category == "About" %}
-											{% set article_first = articles[0] %}
-											{% if article_first.image is defined %}
-											<a href="{{ SITEURL }}/images/{{ article_first.image }}" class="image right"><img src="{{ SITEURL }}/images/{{ article_first.image }}" alt="" /></a>
-											{% endif %}
-											<div class="title">
-												<h1>{{ article_first.title }}<br /></h1>
-												<p>{{ article_first.subtitle }}</p>
-											</div>
-											<p>{{ article_first.summary }}</p>
-											<ul class="actions">
-												<li><a href="/{{ article_first.url }}" class="button big">Learn More</a></li>
-												{% for name, icon, link in CONTACTS if name == "Discord" %}
-												<li><a href="{{ link }}" class="button big"><span class="icon brands fa-{{ icon }}"></span> Join Now</a></li>
-												{% endfor %}
-											</ul>
-											{% endfor %}
-										</header>
-									</article>
-								</section>
+<!-- Banner -->
+<section>
+	<article>
+		<header class="main">
+			{% if ns.article_first.image is defined %}
+			<a href="{{ SITEURL }}/images/{{ ns.article_first.image }}" class="image right"><img src="{{ SITEURL }}/images/{{ ns.article_first.image }}" alt="" /></a>
+			{% endif %}
+			<div class="title">
+				<h1>{{ ns.article_first.title }}<br /></h1>
+				<p>{{ ns.article_first.subtitle }}</p>
+			</div>
+			{{ ns.article_first.summary }}
+			<ul class="actions">
+				<li><a href="/{{ ns.article_first.url }}" class="button big">Learn More</a></li>
+				{% for name, icon, link in CONTACTS if name == "Discord" %}
+				<li><a href="{{ link }}" class="button big"><span class="icon brands fa-{{ icon }}"></span> Join Now</a></li>
+				{% endfor %}
+			</ul>
+		</header>
+	</article>
+</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Community Values</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon solid fa-brain"></span>
-											<div class="content">
-												<h3>Open-mindedness</h3>
-												<p>We believe that learning never stops, and that it's important to stay open to new ways of thinking and doing things. Our community is a place where you can explore the latest technologies and listen to different viewpoints and opinions.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-hands-clapping"></span>
-											<div class="content">
-												<h3>Support</h3>
-												<p>Whether you're new to technology or a seasoned pro, our community is a supportive and welcoming place where you can connect with like-minded individuals who are passionate about growth and success.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-handshake"></span>
-											<div class="content">
-												<h3>Inclusivity</h3>
-												<p>We are committed to creating a safe and inclusive environment where everyone can thrive and learn from one another. Our community is a place where you can connect with people from all walks of life who share your passion for technology</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-heart"></span>
-											<div class="content">
-												<h3>Passion</h3>
-												<p>We believe in continuous growth and learning, and we welcome anyone who shares this mindset to join us and become a part of a community that values personal and professional development.</p>
-											</div>
-										</article>
-									</div>
-								</section>
+<!-- Section -->
+<section>
+	<header class="major">
+		<h2>Community Values</h2>
+	</header>
+	<div class="features">
+		<article>
+			<span class="icon solid fa-brain"></span>
+			<div class="content">
+				<h3>Open-mindedness</h3>
+				<p>We believe that learning never stops, and that it's important to stay open to new ways of thinking and doing things. Our community is a place where you can explore the latest technologies and listen to different viewpoints and opinions.</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon solid fa-hands-clapping"></span>
+			<div class="content">
+				<h3>Support</h3>
+				<p>Whether you're new to technology or a seasoned pro, our community is a supportive and welcoming place where you can connect with like-minded individuals who are passionate about growth and success.</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon solid fa-handshake"></span>
+			<div class="content">
+				<h3>Inclusivity</h3>
+				<p>We are committed to creating a safe and inclusive environment where everyone can thrive and learn from one another. Our community is a place where you can connect with people from all walks of life who share your passion for technology</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon solid fa-heart"></span>
+			<div class="content">
+				<h3>Passion</h3>
+				<p>We believe in continuous growth and learning, and we welcome anyone who shares this mindset to join us and become a part of a community that values personal and professional development.</p>
+			</div>
+		</article>
+	</div>
+</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Recent Articles</h2>
-									</header>
-									<div class="posts">
-										{% for article in articles_page.object_list %}
-										<!-- Post -->
-										<article>
-											<header>
-												{% if article.image is defined %}
-												<a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
-												{% endif %}
-												<div class="title">
-													<h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-												</div>
-												<!--
-												<div class="meta">
-													<time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
-													<a href="#" class="author"><span class="name">{{ article.author }}</span><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt="" /></a>
-												</div>
-												-->
-												<p>{{ article.summary }}</p>
-											</header>
-											<footer>
-												<ul class="actions">
-													<li><a href="{{ article.url }}" class="button big">Continue Reading</a></li>
-												</ul>
-												<!--
-												<ul class="stats">
-													{% for tag in article.tags %}
-													<li><a href="#">{{ tag.name }}</a></li>
-													{% endfor %}
-												</ul>
-												-->
-											</footer>
-										</article>
-										{% endfor %}
-									</div>
-								</section>
+<!-- Section -->
+<section>
+	<header class="major">
+		<h2>Recent Articles</h2>
+	</header>
+	<div class="posts">
+		{% for article in articles_page.object_list %}
+		<!-- Post -->
+		<article>
+			<header>
+				{% if article.image is defined %}
+				<a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
+				{% endif %}
+				<div class="title">
+					<h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+				</div>
+				<!--
+				<div class="meta">
+					<time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
+					<a href="#" class="author"><span class="name">{{ article.author }}</span><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt="" /></a>
+				</div>
+				-->
+				<p>{{ article.summary }}</p>
+			</header>
+			<footer>
+				<ul class="actions">
+					<li><a href="{{ article.url }}" class="button big">Continue Reading</a></li>
+				</ul>
+				<!--
+				<ul class="stats">
+					{% for tag in article.tags %}
+					<li><a href="#">{{ tag.name }}</a></li>
+					{% endfor %}
+				</ul>
+				-->
+			</footer>
+		</article>
+		{% endfor %}
+	</div>
+</section>
 {% endblock %}

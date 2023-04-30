@@ -29,7 +29,8 @@ STATIC_PATHS = [
 ]
 
 EXTRA_PATH_METADATA = {
-    'extra/favicon.svg': {'path': 'favicon.svg'}
+    'extra/favicon.svg': {'path': 'favicon.svg'},
+    'extra/logo-256x256.svg': {'path':'logo-256x256.svg'}
 }
 
 # Blogroll
