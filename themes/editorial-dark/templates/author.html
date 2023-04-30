@@ -1,4 +1,19 @@
 {% extends "base.html" %}
+{% block meta %}
+		<meta property="og:locale" content="en_us">
+		<meta property="og:site_name" content="{{ SITENAME }}">
+		<meta property="og:type" content="object">
+		<meta property="og:url" content="{{ SITEURL }}">
+		<meta property="og:title" content="{{ author.name }}">
+		<meta property="og:description" content="{{ author.summary }}">
+		<meta property="og:image" content="{{ SITEURL }}/images/{{ author.avatar }}">
+		<meta property="og:image:alt" content="{{ author.name }}">
+		<meta property="og:image:width" content="256">
+		<meta property="og:image:height" content="256">
+		<meta property="og:image:type" content="image/png">
+		<meta name="twitter:img:src" content="{{ SITEURL }}/images/{{ author.avatar }}">
+		<meta name="description" content="{{ SITEURL }}/images/{{ author.avatar }}">
+{% endblock %}
 {% block content %}
                                 <section>
                                     <author>
