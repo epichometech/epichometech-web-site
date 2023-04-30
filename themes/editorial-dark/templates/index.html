@@ -4,17 +4,16 @@
 {% set ns.article_first = articles[0] %}
 {% endfor %}
 {% block meta %}
-<meta property="og:sitename" content="{{ SITENAME }}" />
+<meta property="og:site_name" content="{{ SITENAME }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}" />
 <meta property="og:title" content="{{ ns.article_first.title }}" />
 <meta property="og:description" content="{{ ns.article_first.summary }}" />
-<meta property="og:image" content="{{ SITEURL }}/logo-256x256.svg" />
-<meta name='twitter:card' content='{{ ns.article_first.summary }}' />
-<meta name='twitter:site' content='{{ SITENAME }}' />
-<meta name='twitter:title' content='{{ ns.article_first.title }}' />
-<meta name='twitter:description' content='{{ ns.article_first.summary }}' />
-<meta name='twitter:image' content='{{ SITEURL }}/logo-256x256.svg' />
+<meta property="og:image" content="{{ SITEURL }}/logo-256x256.png" />
+<meta property="og:image:alt" content="{{ ns.article_first.title }}" />
+<meta property="og:image:width" content="256" />
+<meta property="og:image:height" content="256" />
+
 {% endblock %}
 {% block content %}
 <!-- Banner -->
