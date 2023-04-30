@@ -1,28 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 							<!-- Banner -->
-								<section id="banner">
-									{% for category, articles in categories|sort if category == "About" %}
-									{% set article_first = articles[0] %}
-									<div class="content">
-										<header>
-											<h1>{{ article_first.title }}<br /></h1>
-											<p>{{ article_first.subtitle }}</p>
-										</header>
-										<p>{{ article_first.summary }}</p>
-										<ul class="actions">
-											<li><a href="/{{ article_first.url }}" class="button big">Learn More</a></li>
-											{% for name, icon, link in CONTACTS if name == "Discord" %}
-											<li><a href="{{ link }}" class="button big"><span class="icon brands fa-{{ icon }}"></span> Join Now</a></li>
+								<section>
+									<article>
+										<header class="main">
+											{% for category, articles in categories|sort if category == "About" %}
+											{% set article_first = articles[0] %}
+											{% if article_first.image is defined %}
+											<a href="{{ SITEURL }}/images/{{ article_first.image }}" class="image right"><img src="{{ SITEURL }}/images/{{ article_first.image }}" alt="" /></a>
+											{% endif %}
+											<div class="title">
+												<h1>{{ article_first.title }}<br /></h1>
+												<p>{{ article_first.subtitle }}</p>
+											</div>
+											<p>{{ article_first.summary }}</p>
+											<ul class="actions">
+												<li><a href="/{{ article_first.url }}" class="button big">Learn More</a></li>
+												{% for name, icon, link in CONTACTS if name == "Discord" %}
+												<li><a href="{{ link }}" class="button big"><span class="icon brands fa-{{ icon }}"></span> Join Now</a></li>
+												{% endfor %}
+											</ul>
 											{% endfor %}
-										</ul>
-									</div>
-									{% if article_first.image is defined %}
-									<span class="image object">
-										<img src="{{ SITEURL }}/images/{{ article_first.image }}" alt=""/>
-									</span>
-									{% endif %}
-									{% endfor %}
+										</header>
+									</article>
 								</section>
 
 							<!-- Section -->
