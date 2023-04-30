@@ -22,7 +22,7 @@
                                             <a href="{{ SITEURL }}/images/{{ article.image }}" class="image article right"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
                                             {% endif %}
                                             <div class="title">
-                                                <h1><a href="/{{ article.url }}">{{ article.title }}</a></h1>
+                                                <h1>{{ article.title }}</h1>
                                             </div>
                                             <div class="meta">
                                                 <time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
