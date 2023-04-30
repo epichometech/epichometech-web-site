@@ -23,6 +23,15 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+STATIC_PATHS = [
+    'images',
+    'extra',
+]
+
+EXTRA_PATH_METADATA = {
+    'extra/favicon.svg': {'path': 'favicon.svg'}
+}
+
 # Blogroll
 LINKS = (('Pelican', 'https://getpelican.com/'),
          ('Python.org', 'https://www.python.org/'),

@@ -2,7 +2,7 @@ Title: A Learning Culture
 Subtitle: Improving technical skills through shared exploration
 Author: Jeremy
 Date: 2023-04-25
-Image: 252445cf-afa0-4961-954f-ce19a9421b46.png
+Image: logo-256x256.svg
 Category: About
 Summary: All good learning starts with simple curiousity. Here we nurture that curiousity as a community effort to discover what it becomes. Not every great idea will result in a successful outcome but together we will learn from that and develop a greater understanding of the technology available to us.
 
