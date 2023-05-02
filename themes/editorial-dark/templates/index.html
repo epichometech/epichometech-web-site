@@ -96,25 +96,25 @@
 				<div class="title">
 					<h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
 				</div>
-				<!--
+				{# Disabled because it wasn't found to be aestheically appealing. Will revisit
 				<div class="meta">
 					<time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
 					<a href="#" class="author"><span class="name">{{ article.author }}</span><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt="" /></a>
 				</div>
-				-->
+				#}
 			</header>
 			<p>{{ article.summary }}</p>
 			<footer>
 				<ul class="actions">
 					<li><a href="{{ article.url }}" class="button big">Continue Reading</a></li>
 				</ul>
-				<!--
+				{# Disabled until tags can be enriched and styled better
 				<ul class="stats">
 					{% for tag in article.tags %}
 					<li><a href="#">{{ tag.name }}</a></li>
 					{% endfor %}
 				</ul>
-				-->
+				#}
 			</footer>
 		</article>
 		{% endfor %}

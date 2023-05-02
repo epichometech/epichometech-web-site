@@ -41,16 +41,15 @@
 				<!-- Sidebar -->
                 <div id="sidebar">
                     <div class="inner">
-
-                        <!-- Search
-                            <section id="search" class="alt">
-                                
-                                <form method="post" action="#">
-                                    <input type="text" name="query" id="query" placeholder="Search" />
-                                </form>
-                                
-                            </section>
-                        -->
+                        {# Disabled until it can be made to work 
+                        <section id="search" class="alt">
+                            
+                            <form method="post" action="#">
+                                <input type="text" name="query" id="query" placeholder="Search" />
+                            </form>
+                            
+                        </section>
+                        #}
                         <!-- Menu -->
                             <nav id="menu">
                                 <header class="major">
@@ -82,18 +81,18 @@
                                         <header>
                                             <time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
                                             <a href="/{{ article.author.url }}" class="author"><span class="name">{{ article.author }}</span></a>
+                                            {# Side bar mini-post image
+                                            {% if article.image is defined %}
+                                            <a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
+                                            {% endif %}
+                                            #}
                                             <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
                                         </header>
                                         <p>{{ article.subtitle }}</p>
-                                        <!--
-                                        {% if article.image is defined %}
-                                        <a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
-                                        {% endif %}
-                                        -->
+                                        <ul class="actions">
+                                            <li><a href="{{ article.url }}" class="button big">More</a></li>
+                                        </ul>
                                     </article>
-                                    <ul class="actions">
-                                        <li><a href="{{ article.url }}" class="button big">More</a></li>
-                                    </ul>
                                     {% endfor %}
                                 </div>
                             </section>
