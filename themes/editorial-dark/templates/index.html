@@ -22,15 +22,15 @@
 <!-- Banner -->
 <section>
 	<article>
-		<header class="main">
-			{% if ns.article_first.image is defined %}
-			<a href="{{ SITEURL }}/images/{{ ns.article_first.image }}" class="image right"><img src="{{ SITEURL }}/images/{{ ns.article_first.image }}" alt="" /></a>
-			{% endif %}
-			<div class="title">
-				<h1>{{ ns.article_first.title }}<br /></h1>
-			</div>
-			<div class="content">
+		<div>
+			<header class="main">
+				{% if ns.article_first.image is defined %}
+				<a href="{{ SITEURL }}/images/{{ ns.article_first.image }}" class="image right"><img src="{{ SITEURL }}/images/{{ ns.article_first.image }}" alt="" /></a>
+				{% endif %}
+				<h1>{{ ns.article_first.title }}</h1>
 				<p>{{ ns.article_first.subtitle }}</p>
+			</header>
+			<div class="content">
 				{{ ns.article_first.summary }}
 			</div>
 			<ul class="actions">
@@ -39,7 +39,7 @@
 				<li><a href="{{ link }}" class="button big"><span class="icon brands fa-{{ icon }}"></span> Join Now</a></li>
 				{% endfor %}
 			</ul>
-		</header>
+		</div>
 	</article>
 </section>
 
@@ -102,8 +102,8 @@
 					<a href="#" class="author"><span class="name">{{ article.author }}</span><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt="" /></a>
 				</div>
 				-->
-				<p>{{ article.summary }}</p>
 			</header>
+			<p>{{ article.summary }}</p>
 			<footer>
 				<ul class="actions">
 					<li><a href="{{ article.url }}" class="button big">Continue Reading</a></li>

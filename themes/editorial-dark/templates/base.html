@@ -83,8 +83,8 @@
                                             <time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
                                             <a href="/{{ article.author.url }}" class="author"><span class="name">{{ article.author }}</span></a>
                                             <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-                                            <p>{{ article.subtitle }}</p>
                                         </header>
+                                        <p>{{ article.subtitle }}</p>
                                         <!--
                                         {% if article.image is defined %}
                                         <a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
