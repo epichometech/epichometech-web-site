@@ -1,8 +1,9 @@
 AUTHOR = 'Jeremy'
 AUTHOR_EMAIL = 'jeremy@epichome.tech'
 SITENAME = 'Epic Home Tech'
-SITESUBTITLE = 'Where Great Tech Makes An Epic Home'
+SITETITLE = 'Where Great Tech Makes An Epic Home'
 SITEURL = 'https://dev.epichome.tech'
+SITEDESCRIPTION = 'A Discord community where open-mindedness, support, inclusivity, and passion for personal and professional growth are valued and fostered.'
 ARTICLE_PATHS = ['articles']
 ARTICLE_URL = 'articles/{slug}.html'
 ARTICLE_SAVE_AS = 'articles/{slug}.html'

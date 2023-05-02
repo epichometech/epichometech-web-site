@@ -8,15 +8,15 @@
 		<meta property="og:site_name" content="{{ SITENAME }}">
 		<meta property="og:type" content="object">
 		<meta property="og:url" content="{{ SITEURL }}">
-		<meta property="og:title" content="{{ ns.article_first.title }}">
-		<meta property="og:description" content="{{ ns.article_first.summary }}">
+		<meta property="og:title" content="{{ SITETITLE }}">
+		<meta property="og:description" content="{{ SITEDESCRIPTION }}">
 		<meta property="og:image" content="{{ SITEURL }}/logo-256x256.png">
-		<meta property="og:image:alt" content="{{ ns.article_first.title }}">
+		<meta property="og:image:alt" content="{{ SITETITLE }}">
 		<meta property="og:image:width" content="256">
 		<meta property="og:image:height" content="256">
 		<meta property="og:image:type" content="image/png">
 		<meta name="twitter:img:src" content="{{ SITEURL }}/logo-256x256.png">
-		<meta name="description" content="{{ ns.article_first.summary }}">
+		<meta name="description" content="{{ SITEDESCRIPTION }}">
 {% endblock %}
 {% block content %}
 <!-- Banner -->
@@ -28,9 +28,11 @@
 			{% endif %}
 			<div class="title">
 				<h1>{{ ns.article_first.title }}<br /></h1>
-				<p>{{ ns.article_first.subtitle }}</p>
 			</div>
-			{{ ns.article_first.summary }}
+			<div class="content">
+				<p>{{ ns.article_first.subtitle }}</p>
+				{{ ns.article_first.summary }}
+			</div>
 			<ul class="actions">
 				<li><a href="/{{ ns.article_first.url }}" class="button big">Learn More</a></li>
 				{% for name, icon, link in CONTACTS if name == "Discord" %}
