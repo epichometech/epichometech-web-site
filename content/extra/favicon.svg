@@ -7,9 +7,9 @@
    viewBox="0 0 66.145837 66.145837"
    version="1.1"
    id="svg5"
-   inkscape:export-filename="favicon.png"
-   inkscape:export-xdpi="6.1399999"
-   inkscape:export-ydpi="6.1399999"
+   inkscape:export-filename="logo-256x256.svg"
+   inkscape:export-xdpi="98.304001"
+   inkscape:export-ydpi="98.304001"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    sodipodi:docname="EHT_logo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -74,7 +74,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:none;stroke:#e1e9ef;stroke-width:2.64583;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#292934;fill-opacity:1;stroke:#e1e9ef;stroke-width:2.64583;stroke-dasharray:none;stroke-opacity:1"
        d="m 9.1413208,18.520832 c 0,10.099471 0,20.198942 0,30.298412 7.9573472,5.049103 15.9146982,10.098203 23.8720472,15.147306 7.957348,-5.049103 15.914699,-10.098203 23.872046,-15.147306 1e-6,-10.09947 0,-20.198941 0,-30.298412 C 48.928067,13.47173 40.970716,8.4226314 33.013368,3.3735294 25.056019,8.4226314 17.098668,13.47173 9.1413208,18.520832 Z"
        id="path140-4" />
     <path
@@ -188,7 +188,7 @@
        style="fill:none;fill-opacity:1;stroke:#e1e9ef;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        d="m 26.458332,31.749997 h 2.645832 l 1.322916,1.322917 V 60.854163 L 56.885413,44.317706" />
     <path
-       style="fill:none;stroke:#3944bf;stroke-width:2.64583;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#3944bf;stroke-width:2.64583;stroke-dasharray:none;stroke-opacity:1"
        d="m 9.1413208,18.520832 c 0,10.099471 0,20.198942 0,30.298412 7.9573472,5.049103 15.9146982,10.098203 23.8720472,15.147306 7.957348,-5.049103 15.914699,-10.098203 23.872046,-15.147306 1e-6,-10.09947 0,-20.198941 0,-30.298412 C 48.928067,13.47173 40.970716,8.4226314 33.013368,3.3735294 25.056019,8.4226314 17.098668,13.47173 9.1413208,18.520832 Z"
        id="path5958" />
   </g>
