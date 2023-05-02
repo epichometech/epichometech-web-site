@@ -12,7 +12,7 @@
 									<article>
 										<header>
 											{% if author.avatar is defined %}
-											<a href="{{ author.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ author.avatar }}" alt="" /></a>
+											<a href="/{{ author.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ author.avatar }}" alt="" /></a>
 											{% endif %}
 											<div class="title">
 												<h3><a href="/{{ author.url }}">{{ author.name }}</a></h3>
