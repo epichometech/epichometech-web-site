@@ -4,20 +4,20 @@
                                 <author>
                                     <header class="main" style="overflow: hidden;">
                                         <div class="title">
-                                            <h2>{{ category.name }}</h2>
+                                            <h1>{{ category.name }}</h1>
                                         </div>
                                     </header>
+                                    {% if category.summary is defined %}
+                                    {{ category.summary }}
+                                    {% endif %}
                                 </author>
                             </section>
-                            {% if category.summary is defined %}
-                            {{ category.summary }}
-                            {% endif %}
                             <section>
                                 <header class="major">
                                     <h2>Recent Articles</h2>
                                 </header>
                                 <div class="posts">
-                                    {% for article in articles_page.object_list %}
+                                    {% for article in articles_page.object_list[:4] %}
                                     <!-- Post -->
                                     <article>
                                         <header>
@@ -37,7 +37,7 @@
                                         </header>
                                         <footer>
                                             <ul class="actions">
-                                                <li><a href="/{{ article.url }}" class="button">Continue Reading</a></li>
+                                                <li><a href="/{{ article.url }}" class="button big">Continue Reading</a></li>
                                             </ul>
                                             <!--
                                             <ul class="stats">

@@ -3,25 +3,21 @@
 							<section>
 								<header class="main" style="overflow: hidden;">
 									<div class="title">
-										<h1>Authors</h1>
+										<h1>Categories</h1>
 									</div>
 								</header>
 								<div class="posts">
-									{% for author, articles in authors %}
+									{% for category, articles in categories %}
 									<!-- Post -->
 									<article>
 										<header>
-											{% if author.avatar is defined %}
-											<a href="/{{ author.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ author.avatar }}" alt="" /></a>
-											{% endif %}
 											<div class="title">
-												<h3><a href="/{{ author.url }}">{{ author.name }}</a></h3>
+												<h3><a href="/{{ category.url }}">{{ category.name }}</a></h3>
 											</div>
-											<p>{{ author.summary }}</p>
 										</header>
 										<footer>
 											<ul class="actions">
-												<li><a href="/{{ author.url }}" class="button big">More</a></li>
+												<li><a href="/{{ category.url }}" class="button big">More</a></li>
 											</ul>
 										</footer>
 									</article>

@@ -25,7 +25,7 @@
 
                         <!-- Header -->
                             <header id="header">
-                                <h2><a href="{{ SITEURL }}">{{ SITENAME }}</a></h2>
+                                <h2><a href="{{ SITEURL }}/index.html">{{ SITENAME }}</a></h2>
                                 <ul class="icons">
                                     {% for name, icon, link in CONTACTS %}
                                     <li><a href="{{ link }}" target="_blank" class="icon {{ icon }}"></a></li>
@@ -83,14 +83,14 @@
                                             <a href="/{{ article.author.url }}" class="author"><span class="name">{{ article.author }}</span></a>
                                             {# Side bar mini-post image
                                             {% if article.image is defined %}
-                                            <a href="{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
+                                            <a href="/{{ article.url }}" class="image featured"><img src="{{ SITEURL }}/images/{{ article.image }}" alt="" /></a>
                                             {% endif %}
                                             #}
-                                            <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                                            <h3><a href="/{{ article.url }}">{{ article.title }}</a></h3>
                                         </header>
                                         <p>{{ article.subtitle }}</p>
                                         <ul class="actions">
-                                            <li><a href="{{ article.url }}" class="button big">More</a></li>
+                                            <li><a href="/{{ article.url }}" class="button big">More</a></li>
                                         </ul>
                                     </article>
                                     {% endfor %}
