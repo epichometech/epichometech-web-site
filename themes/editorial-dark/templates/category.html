@@ -27,18 +27,21 @@
                                             <div class="title">
                                                 <h3><a href="/{{ article.url }}">{{ article.title }}</a></h3>
                                             </div>
+                                            {#
                                             <!--
                                             <div class="meta">
                                                 <time class="published" datetime="{{ article.date | strftime('%Y-%m-%d') }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
                                                 <a href="#" class="author"><span class="name">{{ article.author }}</span><img src="{{ SITEURL }}/theme/images/avatar.jpg" alt="" /></a>
                                             </div>
                                             -->
+                                            #}
                                             <p>{{ article.summary }}</p>
                                         </header>
                                         <footer>
                                             <ul class="actions">
                                                 <li><a href="/{{ article.url }}" class="button big">Continue Reading</a></li>
                                             </ul>
+                                            {#
                                             <!--
                                             <ul class="stats">
                                                 {% for tag in article.tags %}
@@ -46,6 +49,7 @@
                                                 {% endfor %}
                                             </ul>
                                             -->
+                                            #}
                                         </footer>
                                     </article>
                                     {% endfor %}
